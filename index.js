@@ -1,15 +1,23 @@
 const store = require("./app/store");
 const bookActions = require("./features/book/bookSlice").action;
+const magazineActions = require("./features/magazine/magazineSlice").action;
+const fetchUsers = require("./features/user/userSlice").fetchUsers
 
-console.log("initial state", store.getState());
+//console.log("initial state", store.getState());
 
-const unsubscibe = store.subscribe(() => {
+store.subscribe(() => {
   console.log("state", store.getState());
 });
 
-store.dispatch(bookActions.ordered());
-store.dispatch(bookActions.ordered());
-store.dispatch(bookActions.ordered());
-store.dispatch(bookActions.add(2));
+store.dispatch(fetchUsers());
+// store.dispatch(bookActions.ordered());
+// store.dispatch(bookActions.ordered());
+// store.dispatch(bookActions.ordered());
+// store.dispatch(bookActions.add(2));
 
-unsubscibe();
+// store.dispatch(magazineActions.ordered());
+// store.dispatch(magazineActions.ordered());
+// store.dispatch(magazineActions.ordered());
+// store.dispatch(magazineActions.add(2));
+
+//unsubscibe();
